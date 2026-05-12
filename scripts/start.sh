@@ -32,10 +32,31 @@ git pull origin main 2>/dev/null || true
 # 创建工作分支
 git checkout -b "$BRANCH"
 
+# 创建设计文件（从模板复制）
+TARGET="designs/pages/${FEATURE}.pen"
+if [ ! -f "$TARGET" ]; then
+    TEMPLATE=$(find designs -name "*.pen" -path "*/components/*" | head -1)
+    if [ -z "$TEMPLATE" ]; then
+        TEMPLATE=$(find designs -name "*.pen" | head -1)
+    fi
+    if [ -n "$TEMPLATE" ]; then
+        cp "$TEMPLATE" "$TARGET"
+    else
+        touch "$TARGET"
+    fi
+    git add "$TARGET"
+    git commit -m "新建设计: ${FEATURE}"
+fi
+
 echo ""
 echo "✓ 已创建工作分支: $BRANCH"
+echo "✓ 设计文件已创建: $TARGET"
 echo ""
-echo "现在可以开始设计了！"
-echo "  设计文件放在: designs/pages/${FEATURE}.pen"
+echo "现在可以用 Pencil 打开 $TARGET 开始设计！"
 echo "  保存进度:     ./scripts/save.sh"
 echo "  提交评审:     ./scripts/review.sh"
+
+# 在 VSCode 中打开文件
+if command -v code &> /dev/null; then
+    code "$TARGET"
+fi
