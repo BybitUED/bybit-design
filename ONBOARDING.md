@@ -14,7 +14,7 @@
 
 ```bash
 cd ~/Projects
-git clone git@gitlab.com:你的团队/bybit-design.git
+git clone git@github.com:BybitUED/bybit-design.git
 cd bybit-design
 ```
 
