@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "📋 查看状态",
+      "type": "shell",
+      "command": "./scripts/status.sh",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "🆕 开始新设计",
+      "type": "shell",
+      "command": "./scripts/start.sh",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "💾 保存进度",
+      "type": "shell",
+      "command": "./scripts/save.sh",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "🔄 同步最新",
+      "type": "shell",
+      "command": "./scripts/sync.sh",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "📤 提交评审",
+      "type": "shell",
+      "command": "./scripts/review.sh",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "🔒 锁定文件",
+      "type": "shell",
+      "command": "./scripts/lock.sh",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "🔓 解锁文件",
+      "type": "shell",
+      "command": "./scripts/unlock.sh",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    }
+  ]
+}
